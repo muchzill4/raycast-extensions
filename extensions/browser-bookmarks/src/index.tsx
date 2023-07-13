@@ -193,6 +193,8 @@ export default function Command() {
   const fuse = useMemo(() => {
     return new Fuse(folderBookmarks, {
       keys: ["title", "domain", "folder"],
+      ignoreLocation: true,
+      ignoreFieldNorm: true,
     });
   }, [folderBookmarks]);
 
